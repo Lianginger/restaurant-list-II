@@ -3,6 +3,7 @@ const app = express()
 const exphbs = require('express-handlebars')
 const port = 3000
 const mongoose = require('mongoose')
+const Restaurant = require('./models/restaurant')
 
 // 設定模板引擎
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -23,7 +24,9 @@ db.once('open', function () {
 // 處理請求與回應
 // 列出所有餐廳
 app.get('/', (req, res) => {
-  res.render('index')
+  Restaurant.find((err, restaurants) => {
+    res.render('index', { restaurants })
+  })
 })
 
 // 建立新餐廳資料頁面
