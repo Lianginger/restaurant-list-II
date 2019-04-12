@@ -1,7 +1,15 @@
 const express = require('express')
 const app = express()
+const exphbs = require('express-handlebars')
 const port = 3000
 const mongoose = require('mongoose')
+
+// 設定模板引擎
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+
+// 提供靜態檔案
+app.use(express.static('public'))
 
 // 設定連線到 mongoDB
 mongoose.connect('mongodb://localhost/restaurant_list', { useNewUrlParser: true })
@@ -15,7 +23,7 @@ db.once('open', function () {
 // 處理請求與回應
 // 列出所有餐廳
 app.get('/', (req, res) => {
-  res.send('列出所有餐廳')
+  res.render('index')
 })
 
 // 建立新餐廳資料頁面
