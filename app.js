@@ -13,8 +13,39 @@ db.once('open', function () {
 });
 
 // 處理請求與回應
+// 列出所有餐廳
 app.get('/', (req, res) => {
-  res.send('Hello word!')
+  res.send('列出所有餐廳')
+})
+
+// 建立新餐廳資料頁面
+app.get('/restaurants/new', (req, res) => {
+  res.send('建立新餐廳資料頁面')
+})
+
+// 建立新餐廳資料
+app.post('/restaurants/new', (req, res) => {
+  res.send('建立新餐廳資料')
+})
+
+// 查看特定餐廳頁面
+app.get('/restaurants/:id', (req, res) => {
+  res.send('查看特定餐廳頁面')
+})
+
+// 編輯特定餐廳頁面
+app.get('/restaurants/:id/edit', (req, res) => {
+  res.send('編輯特定餐廳頁面')
+})
+
+// 編輯特定餐廳
+app.post('/restaurants/:id/edit', (req, res) => {
+  res.send('編輯特定餐廳')
+})
+
+// 刪除特定餐廳
+app.post('/restaurants/:id/delete', (req, res) => {
+  res.send('刪除特定餐廳')
 })
 
 // 啟動並監聽
