@@ -1,7 +1,7 @@
 # GingerFood 美食餐廳清單網站
-這是一個使用 Express + MongoDB 打造的美食餐廳清單網站，包含了許多我精選推薦的美食餐廳，擁有最完整的分門別類餐廳資訊，包含：評分、類別、地址、電話等，讓您輕鬆找到好店。
+這是一個使用 Express + MongoDB 打造的美食餐廳清單網站，包含了許多我精選推薦的美食餐廳，擁有最完整的分門別類餐廳資訊，包含：評分、類別、地址、電話等，讓您輕鬆找到好店。  
 
-![畫面截圖](https://github.com/Lianginger/restautant-list-II/blob/master/public/img/screenshot-index.JPG)
+![畫面截圖](https://github.com/Lianginger/restaurant-list-II/blob/master/public/img/screenshot-index.jpg)
 
 ## 餐廳清單網站的功能：
 - 使用者可以依餐廳名稱、餐廳類別搜尋餐廳
@@ -10,7 +10,8 @@
 - 使用者可以瀏覽全部所有餐廳
 - 使用者可以修改一家餐廳的資訊
 - 使用者可以刪除一家餐廳
-![網站功能](https://github.com/Lianginger/restautant-list-II/blob/master/public/img/screenshot-feature.gif)
+  
+![網站功能](https://github.com/Lianginger/restaurant-list-II/blob/master/public/img/restaurant-feature.gif)
 
 ## 安裝前提
 - [MongoDB 4.0 以上](https://docs.mongodb.com/manual/installation/)
@@ -19,7 +20,7 @@
 ## 如何安裝
 打開你的 terminal，Clone 這個專案
 ```
-git clone https://github.com/Lianginger/restautant-list-II.git
+git clone https://github.com/Lianginger/restaurant-list-II.git
 ```
 進入檔案夾，下載所有相依套件
 ```
