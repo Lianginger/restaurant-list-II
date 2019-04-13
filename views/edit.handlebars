@@ -1,0 +1,70 @@
+<form action="/restaurants/{{restaurant.id}}/edit" method="post">
+  <h1 class="mb-1 restaurant-show-title">
+    <input type="text" name="name" placeholder="Restaurant name" value="{{restaurant.name}}">
+  </h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 mx-auto">
+
+        <p class="mb-1">
+          <span class="text-secondary">
+            <i class="fas fa-utensils pr-2"></i>
+            類別：
+          </span>
+          <input type="text" name="category" placeholder="Category" value="{{restaurant.category}}">
+        </p>
+
+        <p class="mb-1">
+          <span class="text-secondary">
+            <i class="fas fa-map-marker-alt pr-2"></i>
+            地址：
+          </span>
+          <input type="text" name="location" placeholder="Location" value="{{restaurant.location}}">
+        </p>
+
+        <p class="mb-1">
+          <span class="text-secondary">
+            <i class="fas fa-location-arrow pr-2 fa-xs"></i>
+            Google Map：
+          </span>
+          <input type="text" name="google_map" placeholder="Google_map" value="{{restaurant.google_map}}">
+        </p>
+
+        <p class="mb-1">
+          <span class="text-secondary">
+            <i class="fas fa-mobile-alt pr-2"></i>
+            電話：
+          </span>
+          <input type="text" name="phone" placeholder="Phone" value="{{restaurant.phone}}">
+        </p>
+
+        <p class="mb-1">
+          <span class="text-secondary">
+            <i class="fas fa-star pr-2"></i>
+            Rating：
+          </span>
+          <input type="text" name="rating" placeholder="Rating" value="{{restaurant.rating}}">
+        </p>
+
+        <p class="mb-1">
+          <span class="text-secondary">
+            <i class="fas fa-image pr-2"></i>
+            Image Url：
+          </span>
+          <input type="text" name="image" placeholder="Image Url" value="{{restaurant.image}}">
+        </p>
+
+        <p class="mb-5">
+          <span class="text-secondary d-block">
+            <i class="fas fa-pen pr-2"></i>
+            Description：
+          </span>
+          <textarea name="description" placeholder="Description" rows="4" cols="80" class="d-block">
+            {{restaurant.description}}
+          </textarea>
+          <button type="submit" class="btn btn-success my-3">Done</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</form>
