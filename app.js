@@ -35,6 +35,21 @@ app.get('/', (req, res) => {
     })
 })
 
+// 搜尋頁面
+app.get('/search', (req, res) => {
+  const keyword = req.query.keyword
+  Restaurant.find((err, restaurants) => {
+    if (err) return console.log(err)
+    const restaurantFilterData = restaurants.filter(
+      restaurant => restaurant.name.toLowerCase()
+        .includes(keyword.toLowerCase()) ||
+        restaurant.category.toLowerCase()
+          .includes(keyword.toLowerCase())
+    )
+    res.render('index', { restaurants: restaurantFilterData, keyword })
+  })
+})
+
 // 建立新餐廳資料頁面
 app.get('/restaurants/new', (req, res) => {
   res.render('new')
