@@ -59,7 +59,10 @@ app.post('/restaurants/new', (req, res) => {
 
 // 查看特定餐廳頁面
 app.get('/restaurants/:id', (req, res) => {
-  res.send('查看特定餐廳頁面')
+  Restaurant.findById(req.params.id, (err, restaurant) => {
+    if (err) return console.error(err)
+    res.render('detail', { restaurant })
+  })
 })
 
 // 編輯特定餐廳頁面
