@@ -40,7 +40,7 @@
       <div class="my-3 text-right">
         <a href="/" class="text-secondary pr-5">Back</a>
         <a href="/restaurants/{{restaurant.id}}/edit" class="text-secondary pr-5">Edit</a>
-        <form action="/restaurants/{{restaurant.id}}/delete" method="post" class="d-inline">
+        <form action="/restaurants/{{restaurant.id}}?_method=DELETE" method="post" class="d-inline">
           <button type="submit" class="btn btn-danger">Delete</button>
         </form>
       </div>

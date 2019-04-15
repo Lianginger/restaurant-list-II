@@ -5,6 +5,7 @@ const port = 3000
 const mongoose = require('mongoose')
 const Restaurant = require('./models/restaurant')
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
 // 設定模板引擎
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -12,6 +13,9 @@ app.set('view engine', 'handlebars')
 
 // 提供靜態檔案
 app.use(express.static('public'))
+
+// 設定 method-override
+app.use(methodOverride('_method'))
 
 // 解析 req 資料
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -91,7 +95,7 @@ app.get('/restaurants/:id/edit', (req, res) => {
 })
 
 // 編輯特定餐廳
-app.post('/restaurants/:id/edit', (req, res) => {
+app.put('/restaurants/:id/edit', (req, res) => {
   Restaurant.findById(req.params.id, (err, restaurant) => {
     if (err) return console.error(err)
     restaurant.name = req.body.name
@@ -111,7 +115,7 @@ app.post('/restaurants/:id/edit', (req, res) => {
 })
 
 // 刪除特定餐廳
-app.post('/restaurants/:id/delete', (req, res) => {
+app.delete('/restaurants/:id/', (req, res) => {
   Restaurant.findById(req.params.id, (err, restaurant) => {
     restaurant.remove((err) => {
       if (err) return console.error(err)
