@@ -3,13 +3,11 @@
 
 ![畫面截圖](https://github.com/Lianginger/restaurant-list-II/blob/master/public/img/screenshot-index.jpg)
 
-## 餐廳清單網站的功能：
-- 使用者可以依餐廳名稱、餐廳類別搜尋餐廳
-- 使用者可以新增一家餐廳
-- 使用者可以瀏覽一家餐廳的詳細資訊
-- 使用者可以瀏覽全部所有餐廳
-- 使用者可以修改一家餐廳的資訊
-- 使用者可以刪除一家餐廳
+# 功能：
+- 依餐廳名稱、餐廳類別搜尋餐廳
+- 依餐廳名稱、類別及地區排序
+- 瀏覽全部所有餐廳
+- 能新增 / 瀏覽 / 修改 / 刪除一家餐廳的資訊
   
 ![網站功能](https://github.com/Lianginger/restaurant-list-II/blob/master/public/img/restaurant-feature.gif)
 
@@ -18,11 +16,11 @@
 - [Node.js](https://nodejs.org/en/download/)
 
 ## 如何安裝
-打開你的 terminal，Clone 這個專案
+開啟終端機(Terminal)，Clone 這個專案
 ```
 git clone https://github.com/Lianginger/restaurant-list-II.git
 ```
-進入檔案夾，下載所有相依套件
+進入檔案夾，並下載所有相依套件
 ```
 cd restautant-list-II
 npm install
@@ -32,7 +30,7 @@ npm install
 ```
 node .\models\seeds\restaurantSeeder.js
 ```
-當 terminal 出現以下字樣
+當終端機(Terminal)出現以下字樣
 ```
 Mongodb is connected!
 Creating seeder data is finished!
@@ -44,7 +42,7 @@ Creating seeder data is finished!
 ```
 node app.js
 ```
-當 terminal 出現以下字樣
+當終端機(Terminal)出現以下字樣
 ```
 The Express server is running on http://localhost:3000
 Mongodb is connected!
