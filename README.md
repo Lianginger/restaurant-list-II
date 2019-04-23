@@ -28,7 +28,7 @@ npm install
 ## 匯入種子檔案
 執行 restaurantSeeder.js 檔案，匯入精選餐廳資料
 ```
-node .\models\seeds\restaurantSeeder.js
+node ./models/seeds/restaurantSeeder.js
 ```
 當終端機(Terminal)出現以下字樣
 ```
