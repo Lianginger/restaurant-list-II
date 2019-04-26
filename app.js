@@ -32,6 +32,7 @@ db.once('open', function () {
 
 // 處理請求與回應
 app.use('/', require('./routes/home'))
+app.use('/users', require('./routes/user'))
 app.use('/restaurants', require('./routes/restaurants'))
 
 // 啟動並監聽
