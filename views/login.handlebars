@@ -2,14 +2,14 @@
   <div class="row" style="margin-top: -30vh">
     <div class="col-md-6 m-auto">
       <div class="card card-body">
-        <h3 class="text-center text-danger mb-3">Log in to your account</h3>
+        <h3 class="text-center mb-3">Log in to your account</h3>
         <form action="/users/login" method="POST">
           <div class="form-group ">
-            <label for="email" class="text-danger">Email</label>
+            <label for="email" class="d-none">Email</label>
             <input type="email" id="email" name="email" class="form-control" placeholder="Email address" />
           </div>
           <div class="form-group">
-            <label for="password" class="text-danger">Password</label>
+            <label for="password" class="d-none">Password</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Password" />
           </div>
           <button type="submit" class="btn btn-danger btn-block">Log In</button>

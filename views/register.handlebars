@@ -1,1 +1,35 @@
-<h2>Register</h2>
+<div class="container">
+  <div class="row" style="margin-top: -30vh">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          Register
+        </h1>
+        <form action="/users/register" method="POST">
+          <div class="form-group">
+            <label for="name" class="d-none">Name</label>
+            <input type="name" id="name" name="name" class="form-control" placeholder="Name" value="{{{name}}}" />
+          </div>
+          <div class="form-group">
+            <label for="email" class="d-none">Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{{email}}}" />
+          </div>
+          <div class="form-group">
+            <label for="password" class="d-none">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Create Password"
+              value="{{{password}}}" />
+          </div>
+          <div class="form-group">
+            <label for="password2" class="d-none">Confirm Password</label>
+            <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password"
+              value="{{{password2}}}" />
+          </div>
+          <button type="submit" class="btn btn-danger btn-block">
+            Register
+          </button>
+        </form>
+        <p class="text-center mt-4">Already have an account? <a href="/users/login" class="text-danger">Log In</a></p>
+      </div>
+    </div>
+  </div>
+</div>
