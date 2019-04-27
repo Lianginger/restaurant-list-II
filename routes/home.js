@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
 
   Restaurant
     .find({
+      userId: req.user._id,
       $or: [{ name: { $regex: searchKeywordRegExp } },
       { category: { $regex: searchKeywordRegExp } }]
     })
