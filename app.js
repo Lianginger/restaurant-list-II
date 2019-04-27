@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const session = require('express-session')
 const passport = require('passport')
+const authenticated = require('./config/auth')
 
 // 設定模板引擎
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -48,12 +49,12 @@ const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
   console.log('Mongodb is connected!')
-});
+})
 
 // 處理請求與回應
-app.use('/', require('./routes/home'))
 app.use('/users', require('./routes/user'))
-app.use('/restaurants', require('./routes/restaurants'))
+app.use('/', authenticated, require('./routes/home'))
+app.use('/restaurants', authenticated, require('./routes/restaurants'))
 
 // 啟動並監聽
 app.listen(port, () => {
