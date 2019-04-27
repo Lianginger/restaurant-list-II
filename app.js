@@ -16,7 +16,9 @@ app.set('view engine', 'handlebars')
 
 // 使用 express session
 app.use(session({
-  secret: 'gingerfood secret key'
+  secret: 'gingerfood secret key',
+  resave: 'false',
+  saveUninitialized: 'false',
 }))
 
 // 使用 Passport
@@ -44,7 +46,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // 設定連線到 mongoDB
 mongoose.set("debug", true) // 開發時可以打開 
-mongoose.connect('mongodb://localhost/restaurant_list', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/restaurant_list', {
+  useNewUrlParser: true,
+  useCreateIndex: true
+})
 const db = mongoose.connection
 
 db.on('error', console.error.bind(console, 'connection error:'));
