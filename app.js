@@ -9,7 +9,10 @@ const methodOverride = require('method-override')
 const session = require('express-session')
 const passport = require('passport')
 const authenticated = require('./config/auth')
-
+// 判別開發環境
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config() // 使用 dotenv 讀取 .env 檔案
+}
 // 設定模板引擎
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
@@ -59,6 +62,7 @@ db.once('open', function () {
 
 // 處理請求與回應
 app.use('/users', require('./routes/user'))
+app.use('/auth', require('./routes/ahth'))
 app.use('/', authenticated, require('./routes/home'))
 app.use('/restaurants', authenticated, require('./routes/restaurants'))
 
