@@ -21,7 +21,7 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // 設定連線到 mongoDB
-// 開發時可以打開 mongoose.set("debug", true);
+mongoose.set("debug", true) // 開發時可以打開 
 mongoose.connect('mongodb://localhost/restaurant_list', { useNewUrlParser: true })
 const db = mongoose.connection
 
