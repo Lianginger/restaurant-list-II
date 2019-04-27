@@ -18,14 +18,12 @@
     <!-- navigation -->
     <nav class="navbar justify-content-between">
       <div class="container">
-        <div class="col">
-          <a class="navbar-brand" href="/">
-            GingerFood
-          </a>
-        </div>
-        <div class="col text-right">
-          <a href="/restaurants/new" class="btn btn-success">Create</a>
-        </div>
+        <a class="navbar-brand" href="/">GingerFood</a>
+        {{#if isAuthenticated}}
+        <a href="/users/logout" class="btn btn-outline-light">Logout</a>
+        {{else}}
+        <a href="/users/login" class="btn btn-outline-light">Login</a>
+        {{/if}}
       </div>
     </nav>
 
