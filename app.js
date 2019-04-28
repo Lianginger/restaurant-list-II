@@ -53,7 +53,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // 設定連線到 mongoDB
 mongoose.set("debug", true) // 開發時可以打開 
-mongoose.connect('mongodb://localhost/restaurant_list', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/restaurant_list', {
   useNewUrlParser: true,
   useCreateIndex: true
 })
@@ -63,6 +63,8 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
   console.log('Mongodb is connected!')
 })
+// 新增種子資料
+require('./models/seeds/restaurantSeeder')
 
 // 處理請求與回應
 app.use('/users', require('./routes/user'))
@@ -71,6 +73,6 @@ app.use('/', authenticated, require('./routes/home'))
 app.use('/restaurants', authenticated, require('./routes/restaurants'))
 
 // 啟動並監聽
-app.listen(port, () => {
-  console.log(`The express is running on http://localhost:${port}`)
+app.listen(process.env.PORT || port, () => {
+  console.log(`The express is running`)
 })

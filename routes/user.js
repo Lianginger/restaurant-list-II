@@ -33,8 +33,8 @@ router.post('/register', (req, res) => {
   const { name, email, password, password2 } = req.body
   // 加入錯誤訊息提示
   let errors = []
-  if (!name || !email || !password || !password2) {
-    errors.push({ message: '所有欄位都是必填' })
+  if (!email || !password || !password2) {
+    errors.push({ message: 'Email 和 password 欄位都是必填' })
   }
   if (password !== password2) {
     errors.push({ message: '密碼輸入錯誤' })
