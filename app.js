@@ -9,6 +9,7 @@ const methodOverride = require('method-override')
 const session = require('express-session')
 const passport = require('passport')
 const authenticated = require('./config/auth')
+const flash = require('connect-flash')
 // 判別開發環境
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config() // 使用 dotenv 讀取 .env 檔案
@@ -27,7 +28,8 @@ app.use(session({
 // 使用 Passport
 app.use(passport.initialize())
 app.use(passport.session())
-
+// 使用 connect-flash
+app.use(flash())
 // 載入 Passport config
 require('./config/passport')(passport)
 
@@ -35,6 +37,8 @@ require('./config/passport')(passport)
 app.use((req, res, next) => {
   res.locals.user = req.user
   res.locals.isAuthenticated = req.isAuthenticated()
+  res.locals.success_msg = req.flash('success_msg')
+  res.locals.warning_msg = req.flash('warning_msg')
   next()
 })
 

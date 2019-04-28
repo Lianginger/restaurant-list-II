@@ -3,6 +3,7 @@
     <div class="col-md-6 m-auto">
       <div class="card card-body">
         <h3 class="text-center mb-3">Log in to your account</h3>
+        {{> messages}}
         <form action="/users/login" method="POST">
           <div class="form-group ">
             <label for="email" class="d-none">Email</label>
