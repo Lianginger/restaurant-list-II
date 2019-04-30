@@ -54,16 +54,9 @@ router.post('/register', (req, res) => {
         res.render('register', { errors, name, email, password, password2 })
       } else {
         const newUser = new User(req.body)
-        bcrypt.genSalt(10, function (err, salt) {
-          bcrypt.hash(newUser.password, salt, function (err, hash) {
-            if (err) throw err
-            // Store hash in your password DB.
-            newUser.password = hash
-            newUser.save()
-              .then(user => { res.redirect('/') })
-              .catch(err => console.log(err))
-          })
-        })
+        newUser.save()
+          .then(user => { res.redirect('/') })
+          .catch(err => console.log(err))
       }
     })
   }
