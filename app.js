@@ -68,7 +68,7 @@ require('./models/seeds/restaurantSeeder')
 
 // 處理請求與回應
 app.use('/users', require('./routes/user'))
-app.use('/auth', require('./routes/ahth'))
+app.use('/auth', require('./routes/auth'))
 app.use('/', authenticated, require('./routes/home'))
 app.use('/restaurants', authenticated, require('./routes/restaurants'))
 
