@@ -5,8 +5,8 @@ const Restaurant = require('../models/restaurant')
 router.get('/', (req, res) => {
   const searchKeyword = req.query.searchKeyword
   const searchKeywordRegExp = new RegExp(req.query.searchKeyword, 'i')
-  const sortField = req.query.sortField || undefined
-  const sortOrder = req.query.sortOrder || undefined
+  const sortField = req.query.sortField || 'name'
+  const sortOrder = req.query.sortOrder || 'asc'
   const sortObject = {}
   sortObject[sortField] = sortOrder
 
